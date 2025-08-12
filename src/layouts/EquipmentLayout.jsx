@@ -9,6 +9,7 @@ import { useEffect } from "react";
 export default function EquipmentLayout() {
   const [navOpen, setNavOpen] = useState(false);
   const [subNavOpen, setSubNavOpen] = useState({});
+  const [indexInput, setIndexInput] = useState('');
 
   const navigate = useNavigate();
 
@@ -73,8 +74,29 @@ export default function EquipmentLayout() {
           </DropdownMenu.Portal>
         </DropdownMenu.Root>
       </div>
+ 
+      <form 
+        className="flex flex-col align-center gap-2"
+        onSubmit={e => {
+          e.preventDefault();
+          navigate(`${indexInput}`);
+        }}
+      >
+        <label htmlFor="index-input"><h3>Enter Equipment Index:</h3></label>
+        <div className="flex flex-row gap-1">
+          <input type="text" id="index-input" value={indexInput} onChange={e => setIndexInput(e.target.value)} />
+          <button 
+            type="submit" 
+            className="thin-border bg-dark-beige"
+            disabled={!indexInput}
+            style={{ cursor: !indexInput ? 'not-allowed' : 'pointer' }}
+          >
+            Go
+          </button>
+        </div>
+      </form>
 
-
+      <Outlet />
     </>
   )
 }

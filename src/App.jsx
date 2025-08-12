@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import './style.css'
 import MainLayout from './layouts/MainLayout'
 import EquipmentLayout from './layouts/EquipmentLayout'
+import EquipmentPage from './pages/EquipmentPage'
 
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
               <Route path='/damage-types/:index' />
             </Route>
             <Route path='/equipment' element={<EquipmentLayout />}>
-              <Route path='/equipment/:index' />
+              <Route path='/equipment/:index' element={<EquipmentPage />} />
             </Route>
             <Route path='/feats'>
               <Route path='/feats/:index' />

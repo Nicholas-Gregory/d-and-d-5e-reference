@@ -28,7 +28,7 @@ export default function CategorySubMenu({ index, name }) {
             <ClickableText
               text={item.name}
               onClick={() => {
-                navigate(`/equipment/${item.index}`);
+                navigate(`/${item.url.split('/').slice(-2).join('/')}`);
               }}
             />
           </DropdownMenu.Item>
