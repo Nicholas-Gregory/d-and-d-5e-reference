@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './style.css'
 import MainLayout from './layouts/MainLayout'
+import EquipmentLayout from './layouts/EquipmentLayout'
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
             <Route path='/damage-types'>
               <Route path='/damage-types/:index' />
             </Route>
-            <Route path='/equipment'>
+            <Route path='/equipment' element={<EquipmentLayout />}>
               <Route path='/equipment/:index' />
             </Route>
             <Route path='/feats'>
@@ -57,9 +58,6 @@ function App() {
             </Route>
             <Route path='/alignments'>
               <Route path='/alignments/:index' />
-            </Route>
-            <Route path='/equipment-categories'>
-              <Route path='/equipment-categories/:index' />
             </Route>
             <Route path='/features'>
               <Route path='/features/:index' />

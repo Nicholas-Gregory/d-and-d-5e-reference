@@ -17,7 +17,7 @@ body {
 .flex {
   display: flex;
 }
-.flex-column {
+.flex-col {
   flex-direction: column;
 }
 .flex-row {
@@ -76,6 +76,10 @@ body {
   border: 4px solid black;
   border-radius: 0;
 }
+.thin-border {
+  border: 1px solid black;
+  border-radius: 0;
+}
 
 .thick-border p {
   margin: 0.5rem;
@@ -106,7 +110,13 @@ body {
   background-color: lightgray;
 }
 .bg-dark-beige {
-  background-color: burlywood
+  background-color: burlywood;
+}
+.bg-brown {
+  background-color: brown;
+}
+.bg-red {
+  background-color: red;
 }
 
 /* Padding Classes */
