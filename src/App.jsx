@@ -1,5 +1,6 @@
-import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router'
+import './style.css'
+import MainLayout from './layouts/MainLayout'
 
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path='/'>
+          <Route path='/' element={<MainLayout />}>
             <Route path='/ability-scores'>
               <Route path='/ability-scores/:index' />
             </Route>

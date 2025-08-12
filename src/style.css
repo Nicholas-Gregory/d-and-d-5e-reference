@@ -1,0 +1,161 @@
+html { 
+  font-family: 'Courier New', Courier, monospace; 
+}
+
+body {
+  background-color: bisque;
+}
+
+/* Utility Classes */
+
+.margin-auto {
+  margin: auto;
+}
+.text-center {
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
+.gap-2 {
+  gap: 0.5rem;
+}
+.gap-3 {
+  gap: 1rem;
+}
+.gap-4 {
+  gap: 1.5rem;
+}
+.gap-5 {
+  gap: 2rem;
+}
+
+.flex-1 {
+  flex: 1;
+}
+.flex-2 {
+  flex: 2;
+}
+.flex-3 {
+  flex: 3;
+}
+.flex-4 {
+  flex: 4;
+}
+.flex-5 {
+  flex: 5;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+.flex-shrink {
+  flex-shrink: 1;
+}
+
+/* Thick-bordered divs with square corners */
+.thick-border {
+  border: 4px solid black;
+  border-radius: 0;
+}
+
+.thick-border p {
+  margin: 0.5rem;
+}
+
+.thick-border h2 {
+  margin: 0.5rem;
+}
+
+.thick-border h3 {
+  margin: 0.5rem;
+}
+
+.list-card {
+  border-top: thin solid gray;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Background Classes */
+.bg-white {
+  background-color: white;
+}
+.bg-gray {
+  background-color: gray;
+}
+.bg-light-gray {
+  background-color: lightgray;
+}
+.bg-dark-beige {
+  background-color: burlywood
+}
+
+/* Padding Classes */
+.p-0 {
+  padding: 0;
+}
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 1rem;
+}
+.p-4 {
+  padding: 1.5rem;
+}
+.p-5 {
+  padding: 2rem;
+}
+
+/* Margin Classes */
+.m-0 {
+  margin: 0;
+}
+.m-1 {
+  margin: 0.25rem;
+}
+.m-2 {
+  margin: 0.5rem;
+}
+.m-3 {
+  margin: 1rem;
+}
+.m-4 {
+  margin: 1.5rem;
+}
+.m-5 {
+  margin: 2rem;
+}
+
+/* Unstyled List Item */
+.unstyled-li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
