@@ -1,4 +1,4 @@
-import { DropdownMenu } from "radix-ui";
+import { DropdownMenu, ScrollArea } from "radix-ui";
 import useResource from "../hooks/useResource"
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
@@ -47,29 +47,49 @@ export default function EquipmentLayout() {
             </button>
           </DropdownMenu.Trigger>
 
-          <DropdownMenu.Portal>
-            <DropdownMenu.Content className="thin-border bg-dark-beige" asChild>
-              <div className="flex flex-col">
-                {categories && categories.results.map(category => (
-                  <DropdownMenu.Sub                       
-                    key={category.index} 
-                    open={subNavOpen[category.index]}
-                    onOpenChange={open => setSubNavOpen(prev => ({ ...prev, [category.index]: open }))}
-                  >
-                    <DropdownMenu.SubTrigger>
-                      <ClickableText 
-                        text={category.name} 
-                        onClick={() => setSubNavOpen(prev => ({ ...prev, [category.index]: !prev[category.index] }))}
-                      />
-                    </DropdownMenu.SubTrigger>
-                    <DropdownMenu.Portal>
-                      <DropdownMenu.SubContent className="thin-border bg-dark-beige">
-                        <CategorySubMenu index={category.index} name='equipment' />
-                      </DropdownMenu.SubContent>
-                    </DropdownMenu.Portal>
-                  </DropdownMenu.Sub>
-                ))}
-              </div>
+          <DropdownMenu.Portal> 
+            <DropdownMenu.Content 
+              className="thin-border bg-dark-beige"
+              align="start"
+            >
+              <ScrollArea.Root>
+                <ScrollArea.Viewport className="max-h-50 max-w-50">
+                  <div className="flex flex-col">
+                    {categories && categories.results.map(category => (
+                      <DropdownMenu.Sub
+                        key={category.index}
+                        open={subNavOpen[category.index]}
+                        onOpenChange={open => setSubNavOpen(prev => ({ ...prev, [category.index]: open }))}
+                      >
+                        <DropdownMenu.SubTrigger>
+                          <ClickableText
+                            text={category.name}
+                            onClick={() => setSubNavOpen(prev => ({ ...prev, [category.index]: !prev[category.index] }))}
+                          />
+                        </DropdownMenu.SubTrigger>
+                        <DropdownMenu.Portal>
+                          <DropdownMenu.SubContent 
+                            className="thin-border bg-dark-beige"
+                            align="end"
+                          >
+                            <ScrollArea.Root>
+                              <ScrollArea.Viewport className="max-h-25 max-w-50">
+                                <CategorySubMenu index={category.index} name="equipment" />
+                              </ScrollArea.Viewport>
+                              <ScrollArea.Scrollbar orientation="vertical" className="scroll-area-scrollbar">
+                                <ScrollArea.Thumb className="scroll-area-thumb" />
+                              </ScrollArea.Scrollbar>
+                            </ScrollArea.Root>
+                          </DropdownMenu.SubContent>
+                        </DropdownMenu.Portal>
+                      </DropdownMenu.Sub>
+                    ))}
+                  </div>
+                </ScrollArea.Viewport>
+                <ScrollArea.Scrollbar orientation="vertical" className="scroll-area-scrollbar">
+                  <ScrollArea.Thumb className="scroll-area-thumb" />
+                </ScrollArea.Scrollbar>
+              </ScrollArea.Root>
             </DropdownMenu.Content>
           </DropdownMenu.Portal>
         </DropdownMenu.Root>
