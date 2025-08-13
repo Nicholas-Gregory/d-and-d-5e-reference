@@ -51,7 +51,7 @@ function App() {
             <Route path='/magic-items'>
               <Route path='/magic-items/:index' />
             </Route>
-            <Route path='/monsters'>
+            <Route path='/monsters' element={<CategoryLayout categoryPath={['monsters']} categoryName="Monsters" />}>
               <Route path='/monsters/:index' />
             </Route>
             <Route path='/proficiencies'>
