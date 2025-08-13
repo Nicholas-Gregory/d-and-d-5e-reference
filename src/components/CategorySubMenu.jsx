@@ -3,7 +3,7 @@ import useResource from '../hooks/useResource';
 import ClickableText from './ClickableText';
 import { useNavigate } from 'react-router';
 
-export default function CategorySubMenu({ index, name }) {
+export default function CategorySubMenu({ index, name, onClick }) {
   const navigate = useNavigate();
 
   const {
@@ -27,9 +27,7 @@ export default function CategorySubMenu({ index, name }) {
           <DropdownMenu.Item key={item.index} asChild>
             <ClickableText
               text={item.name}
-              onClick={() => {
-                navigate(`/${item.url.split('/').slice(-2).join('/')}`);
-              }}
+              onClick={() => onClick(item)}
             />
           </DropdownMenu.Item>
         ))}

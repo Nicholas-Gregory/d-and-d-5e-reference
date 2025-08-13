@@ -74,7 +74,15 @@ export default function EquipmentLayout() {
                           >
                             <ScrollArea.Root>
                               <ScrollArea.Viewport className="max-h-25 max-w-50">
-                                <CategorySubMenu index={category.index} name="equipment" />
+                                <CategorySubMenu 
+                                  index={category.index} 
+                                  name="equipment" 
+                                  onClick={(item) => {
+                                    setNavOpen(false);
+                                    setSubNavOpen(prev => ({ ...prev, [category.index]: false }));
+                                    navigate(`/${item.url.split('/').slice(-2).join('/')}`);
+                                  }}
+                                />
                               </ScrollArea.Viewport>
                               <ScrollArea.Scrollbar orientation="vertical" className="scroll-area-scrollbar">
                                 <ScrollArea.Thumb className="scroll-area-thumb" />
