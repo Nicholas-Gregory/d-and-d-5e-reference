@@ -13,13 +13,16 @@ export default function useResource(...resourceIdentifiers) {
         const response = await fetch(`/api/2014/${resourceIdentifiers.join('/')}`);
 
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          const error = new Error(`Error fetching resource: ${response.statusText}`);
+          error.status = response.status;
+          throw error;
         }
 
         const result = await response.json();
         setData(result);
       } catch (err) {
         setError(err);
+        setData(null);
       } finally {
         setLoading(false);
       }

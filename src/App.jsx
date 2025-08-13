@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router'
 import './style.css'
 import MainLayout from './layouts/MainLayout'
-import EquipmentLayout from './layouts/EquipmentLayout'
 import EquipmentPage from './pages/EquipmentPage'
+import CategoryLayout from './layouts/CategoryLayout'
 
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
             <Route path='/damage-types'>
               <Route path='/damage-types/:index' />
             </Route>
-            <Route path='/equipment' element={<EquipmentLayout />}>
+            <Route path='/equipment' element={<CategoryLayout categoryPath={['equipment-categories']} categoryName="Equipment" />}>
               <Route path='/equipment/:index' element={<EquipmentPage />} />
             </Route>
             <Route path='/feats'>

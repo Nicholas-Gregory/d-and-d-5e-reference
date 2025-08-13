@@ -101,10 +101,6 @@ export default function EquipmentPage() {
           </div>
         )}
 
-        {equipment.image && (
-          <img src={equipment.image} alt={equipment.name} className="thick-border p-1" />
-        )}
-
         {equipment.properties && equipment.properties.length > 0 && (
           <div className="flex flex-col gap-1 align-center">
             <h5>Properties:</h5>
@@ -137,6 +133,10 @@ export default function EquipmentPage() {
             <h5>Speed:</h5>
             <span>{equipment.speed.quantity} {equipment.speed.unit}</span>
           </div>
+        )}
+
+        {equipment.image && (
+          <img src={equipment.image} alt={equipment.name} className="thick-border p-1" />
         )}
       </div>
     );
