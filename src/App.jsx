@@ -17,6 +17,8 @@ import AlignmentPage from './pages/AlignmentPage'
 import FeaturePage from './pages/FeaturePage'
 import MagicSchoolPage from './pages/MagicSchoolPage'
 import RacePage from './pages/RacePage'
+import MagicItemPage from './pages/MagicItemPage'
+import SpellPage from './pages/SpellPage'
 
 
 function App() {
@@ -48,8 +50,8 @@ function App() {
           <Route path='/languages' element={<CategoryLayout categoryPath={['languages']} categoryName="Languages" />}>
             <Route path='/languages/:index' element={<LanguagePage />} />
           </Route>
-          <Route path='/magic-items'>
-            <Route path='/magic-items/:index' />
+          <Route path='/magic-items' element={<CategoryLayout categoryPath={['magic-items']} categoryName="Magic Items" />}>
+            <Route path='/magic-items/:index' element={<MagicItemPage />} />
           </Route>
           <Route path='/monsters' element={<CategoryLayout categoryPath={['monsters']} categoryName="Monsters" />}>
             <Route path='/monsters/:index' element={<MonsterPage />} />
@@ -72,8 +74,8 @@ function App() {
           <Route path='/rules' element={<CategoryLayout categoryPath={['rules']} categoryName="Subsections" />}>
             <Route path='/rules/:index' element={<RulesPage />} />
           </Route>
-          <Route path='/spells'>
-            <Route path='/spells/:index' />
+          <Route path='/spells' element={<CategoryLayout categoryPath={['spells']} categoryName="Spells" />}>
+            <Route path='/spells/:index' element={<SpellPage />} />
           </Route>
           <Route path='/subclasses'>
             <Route path='/subclasses/:index' />
