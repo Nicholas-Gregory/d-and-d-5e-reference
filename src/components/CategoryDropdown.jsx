@@ -31,11 +31,9 @@ export default function CategoryDropdown({ categoryPath, categoryName, isNull, c
 
   useEffect(() => {
     if ((categoryError && categoryError.status === 404) || (categoryData && !categoryData.results && !categoryData[categoryName])) {
-      console.log('here')
       isNull(true);
     } else {
       isNull(false);
-      // console.log(categoryData)
     }
   }, [categoryError, categoryData, isNull]);
 

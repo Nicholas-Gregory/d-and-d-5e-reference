@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from "react-router";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import useResource from "../hooks/useResource";
 import path from "path";
 import CategoryDropdown from "../components/CategoryDropdown";
@@ -7,6 +7,8 @@ import { useState } from "react";
 
 export default function CategoryLayout({ categoryPath, categoryName }) {
   const [navOpen, setNavOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -42,7 +44,29 @@ export default function CategoryLayout({ categoryPath, categoryName }) {
             </DropdownMenu.Content>
           </DropdownMenu.Portal>
         </DropdownMenu.Root>
+
       </div>
+
+      <form
+          className="flex flex-col align-center gap-1"
+          onSubmit={(e) => {
+            e.preventDefault();
+            navigate(`/${categoryName.toLowerCase()}/${e.target.elements.index.value}`);
+          }}
+        >
+          <label htmlFor="index">Go to Item:</label>
+          <div className="flex flex-row align-center gap-1">
+            <input
+              type="text"
+              name="index"
+              placeholder="Enter index"
+              className="thin-border"
+            />
+            <button type="submit" className="thin-border bg-dark-beige">
+              Go
+            </button>
+          </div>
+        </form>
 
       <Outlet />
     </>

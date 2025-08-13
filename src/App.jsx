@@ -3,6 +3,7 @@ import './style.css'
 import MainLayout from './layouts/MainLayout'
 import EquipmentPage from './pages/EquipmentPage'
 import CategoryLayout from './layouts/CategoryLayout'
+import MonsterPage from './pages/MonsterPage'
 
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
               <Route path='/magic-items/:index' />
             </Route>
             <Route path='/monsters' element={<CategoryLayout categoryPath={['monsters']} categoryName="Monsters" />}>
-              <Route path='/monsters/:index' />
+              <Route path='/monsters/:index' element={<MonsterPage />} />
             </Route>
             <Route path='/proficiencies'>
               <Route path='/proficiencies/:index' />
