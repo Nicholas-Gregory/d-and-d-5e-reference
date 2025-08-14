@@ -9,8 +9,13 @@ export default function useResource(...resourceIdentifiers) {
     const fetchData = async () => {
       if (!resourceIdentifiers.every(id => id)) return;
 
+      let queryString = '';
+      if (typeof resourceIdentifiers[resourceIdentifiers.length - 1] === 'object') {
+        queryString = new URLSearchParams(resourceIdentifiers.pop()).toString();
+      }
+
       try {
-        const response = await fetch(`/api/2014/${resourceIdentifiers.join('/')}`);
+        const response = await fetch(`/api/2014/${resourceIdentifiers.join('/')}${queryString}`);
 
         if (!response.ok) {
           const error = new Error(`Error fetching resource: ${response.statusText}`);

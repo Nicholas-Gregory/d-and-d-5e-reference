@@ -19,6 +19,11 @@ import MagicSchoolPage from './pages/MagicSchoolPage'
 import RacePage from './pages/RacePage'
 import MagicItemPage from './pages/MagicItemPage'
 import SpellPage from './pages/SpellPage'
+import SubclassPage from './pages/SubclassPage'
+import SubracePage from './pages/SubracePage'
+import TraitPage from './pages/TraitPage'
+import SkillPage from './pages/SkillPage'
+import WeaponPropertyPage from './pages/WeaponPropertyPage'
 
 
 function App() {
@@ -77,20 +82,20 @@ function App() {
           <Route path='/spells' element={<CategoryLayout categoryPath={['spells']} categoryName="Spells" />}>
             <Route path='/spells/:index' element={<SpellPage />} />
           </Route>
-          <Route path='/subclasses'>
-            <Route path='/subclasses/:index' />
+          <Route path='/subclasses' element={<CategoryLayout categoryPath={['subclasses']} categoryName="Subclasses" />}>
+            <Route path='/subclasses/:index' element={<SubclassPage />} />
           </Route>
-          <Route path='/subraces'>
-            <Route path='/subraces/:index' />
+          <Route path='/subraces' element={<CategoryLayout categoryPath={['subraces']} categoryName="Subraces" />}>
+            <Route path='/subraces/:index' element={<SubracePage />} />
           </Route>
-          <Route path='/traits'>
-            <Route path='/traits/:index' />
+          <Route path='/traits' element={<CategoryLayout categoryPath={['traits']} categoryName="Traits" />}>
+            <Route path='/traits/:index' element={<TraitPage />} />
           </Route>
-          <Route path='/skills'>
-            <Route path='/skills/:index' />
+          <Route path='/skills' element={<CategoryLayout categoryPath={['skills']} categoryName="Skills" />}>
+            <Route path='/skills/:index' element={<SkillPage />} />
           </Route>
-          <Route path='/weapon-properties'>
-            <Route path='/weapon-properties/:index' />
+          <Route path='/weapon-properties' element={<CategoryLayout categoryPath={['weapon-properties']} categoryName="Weapon Properties" />}>
+            <Route path='/weapon-properties/:index' element={<WeaponPropertyPage />} />
           </Route>
         </Route>
       </Routes>
