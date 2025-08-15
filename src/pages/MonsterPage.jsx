@@ -93,7 +93,7 @@ export default function MonsterPage() {
       )}
 
       {monster.image && (
-        <img src={monster.image} alt={monster.name} className="thick-border p-1" />
+        <img src={`https://www.dnd5eapi.co${monster.image}`} alt={monster.name} className="thick-border p-1" />
       )}
     </div>
   );

@@ -24,7 +24,7 @@ export default function CategoryDropdown({ categoryPath, categoryName, isNull, c
   const renderChild = (isNullResult) => {
     setLeaf(isNullResult)
     if (isNullResult) {
-      leafClick(lastClicked);
+      if (lastClicked) leafClick(lastClicked);
       setLastClicked(null);
     }
   }
@@ -57,7 +57,7 @@ export default function CategoryDropdown({ categoryPath, categoryName, isNull, c
           ))
         ) : (
           (categoryData.results || categoryData[categoryName]).map((item, index) => (
-            <DropdownMenu.Sub key={item.index} defaultOpen>
+            <DropdownMenu.Sub key={item.index}>
               <DropdownMenu.SubTrigger>
                 <ClickableText text={item.name} onClick={() => setLastClicked(item)} />
               </DropdownMenu.SubTrigger>

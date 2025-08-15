@@ -28,7 +28,7 @@ import WeaponPropertyPage from './pages/WeaponPropertyPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/d-and-d-5e-reference'>
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route path='/ability-scores' element={<CategoryLayout categoryPath={['ability-scores']} categoryName="Ability Scores" />}>

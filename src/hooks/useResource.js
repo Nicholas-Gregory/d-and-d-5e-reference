@@ -15,7 +15,7 @@ export default function useResource(...resourceIdentifiers) {
       }
 
       try {
-        const response = await fetch(`/api/2014/${resourceIdentifiers.join('/')}${queryString}`);
+        const response = await fetch(`https://www.dnd5eapi.co/api/2014/${resourceIdentifiers.join('/')}${queryString}`);
 
         if (!response.ok) {
           const error = new Error(`Error fetching resource: ${response.statusText}`);
