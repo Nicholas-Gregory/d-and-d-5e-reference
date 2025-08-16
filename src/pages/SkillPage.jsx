@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 import useResource from "../hooks/useResource";
 
 export default function SkillPage() {
@@ -25,7 +25,7 @@ export default function SkillPage() {
 
       <div className="flex flex-row gap-1 align-center">
         <h5>Ability:</h5>
-        <span>{skill.ability_score.name}</span>
+        <span><Link to={`/ability-scores/${skill.ability_score.index}`}>{skill.ability_score.name}</Link></span>
       </div>
     </div>
   )
