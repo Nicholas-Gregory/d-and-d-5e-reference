@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import useResource from "../hooks/useResource";
+import { Link } from "react-router-dom";
 
 export default function MagicItemPage() {
   const { index } = useParams();
@@ -23,12 +24,12 @@ export default function MagicItemPage() {
 
       <div className="flex flex-row gap-1 align-center">
         <h5>Category:</h5>
-        <span>{magicItem.equipment_category.name}</span>
+        <span><Link to={`/equipment-categories/${magicItem.equipment_category.index}`}>{magicItem.equipment_category.name}</Link></span>
       </div>
 
       <div className="flex flex-row gap-1 align-center">
         <h5>Rarity:</h5>
-        <span>{magicItem.rarity.name}</span>
+        <span><Link to={`/rarities/${magicItem.rarity.index}`}>{magicItem.rarity.name}</Link></span>
       </div>
 
       {magicItem.desc && (

@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import useResource from "../hooks/useResource";
+import { Link } from "react-router-dom";
 
 export default function FeaturePage() {
   const { index } = useParams();
@@ -23,7 +24,7 @@ export default function FeaturePage() {
 
       <div className="flex flex-row gap-1 align-center">
         <h5>Class:</h5>
-        <span>{feature.class.name}</span>
+        <span><Link to={`/classes/${feature.class.index}`}>{feature.class.name}</Link></span>
       </div>
 
       <div className="flex flex-row gap-1 align-center">

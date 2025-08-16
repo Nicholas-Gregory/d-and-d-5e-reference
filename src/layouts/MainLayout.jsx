@@ -165,7 +165,7 @@ export default function MainLayout() {
                     }}
                   />
                 </DropdownMenu.Item>
-                <DropdownMenu.Item asChild>
+                {/* <DropdownMenu.Item asChild>
                   <ClickableText
                     text="Rule Sections"
                     onClick={() => {
@@ -173,13 +173,13 @@ export default function MainLayout() {
                       navigate('/rule-sections');
                     }}
                   />
-                </DropdownMenu.Item>
+                </DropdownMenu.Item> */}
                 <DropdownMenu.Item asChild>
                   <ClickableText
                     text="Rules"
                     onClick={() => {
                       setNavOpen(false);
-                      navigate('/rules');
+                      navigate('/rule-sections');
                     }}
                   />
                 </DropdownMenu.Item>

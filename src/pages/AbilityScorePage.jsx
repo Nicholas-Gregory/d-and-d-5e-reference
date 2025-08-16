@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useResource from '../hooks/useResource';
 
 const AbilityScorePage = () => {
@@ -19,7 +19,7 @@ const AbilityScorePage = () => {
           <h5>Associated Skills:</h5>
           <ul>
             {data.skills.map((skill) => (
-              <li key={skill.index}>{skill.name}</li>
+              <li key={skill.index}>{<Link to={`/skills/${skill.index}`}>{skill.name}</Link>}</li>
             ))}
           </ul>
         </div>

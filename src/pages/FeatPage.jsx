@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useResource from '../hooks/useResource';
 
 const FeatPage = () => {
@@ -18,7 +18,7 @@ const FeatPage = () => {
           <h5>Prerequisites:</h5>
           <ul>
             {data.prerequisites.map((prereq, index) => (
-              <li key={index}>{prereq.ability_score.name} {prereq.minimum_score}</li>
+              <li key={index}>{<Link to={`/ability-scores/${prereq.ability_score.index}`}>{prereq.ability_score.name}</Link>} {prereq.minimum_score}</li>
             ))}
           </ul>
         </div>

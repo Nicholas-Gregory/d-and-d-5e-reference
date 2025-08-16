@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { HashRouter, Route, Routes } from 'react-router'
 import './style.css'
 import MainLayout from './layouts/MainLayout'
 import EquipmentPage from './pages/EquipmentPage'
@@ -28,7 +28,7 @@ import WeaponPropertyPage from './pages/WeaponPropertyPage'
 
 function App() {
   return (
-    <BrowserRouter basename='/d-and-d-5e-reference'>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<MainLayout />}>
           <Route path='/ability-scores' element={<CategoryLayout categoryPath={['ability-scores']} categoryName="Ability Scores" />}>
@@ -76,8 +76,8 @@ function App() {
           <Route path='/races' element={<CategoryLayout categoryPath={['races']} categoryName="Races" />}>
             <Route path='/races/:index' element={<RacePage />} />
           </Route>
-          <Route path='/rules' element={<CategoryLayout categoryPath={['rules']} categoryName="Subsections" />}>
-            <Route path='/rules/:index' element={<RulesPage />} />
+          <Route path='/rule-sections' element={<CategoryLayout categoryPath={['rules']} categoryName="Subsections" />}>
+            <Route path='/rule-sections/:index' element={<RulesPage />} />
           </Route>
           <Route path='/spells' element={<CategoryLayout categoryPath={['spells']} categoryName="Spells" />}>
             <Route path='/spells/:index' element={<SpellPage />} />
@@ -99,7 +99,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

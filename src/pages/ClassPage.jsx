@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useResource from '../hooks/useResource';
 
 const ClassPage = () => {
@@ -22,7 +22,7 @@ const ClassPage = () => {
         <h5>Proficiencies:</h5>
         <ul>
           {data.proficiencies.map((prof) => (
-            <li key={prof.index}>{prof.name}</li>
+            <li key={prof.index}><Link to={`/proficiencies/${prof.index}`}>{prof.name}</Link></li>
           ))}
         </ul>
       </div>
@@ -31,7 +31,7 @@ const ClassPage = () => {
         <h5>Saving Throws:</h5>
         <ul>
           {data.saving_throws.map((save) => (
-            <li key={save.index}>{save.name}</li>
+            <li key={save.index}><Link to={`/ability-scores/${save.index}`}>{save.name}</Link></li>
           ))}
         </ul>
       </div>
@@ -40,7 +40,7 @@ const ClassPage = () => {
         <h5>Starting Equipment:</h5>
         <ul>
           {data.starting_equipment.map((item, index) => (
-            <li key={index}>{item.equipment.name} (x{item.quantity})</li>
+            <li key={index}><Link to={`/equipment/${item.equipment.index}`}>{item.equipment.name}</Link> (x{item.quantity})</li>
           ))}
         </ul>
       </div>

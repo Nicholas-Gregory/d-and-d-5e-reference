@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import useResource from '../hooks/useResource';
 
 const BackgroundPage = () => {
@@ -17,14 +17,14 @@ const BackgroundPage = () => {
         <h5>Starting Proficiencies:</h5>
         <ul>
           {data.starting_proficiencies.map((prof) => (
-            <li key={prof.index}>{prof.name}</li>
+            <li key={prof.index}><Link to={`/proficiencies/${prof.index}`}>{prof.name}</Link></li>
           ))}
         </ul>
       </div>
 
       <div className="flex flex-col gap-1 align-center">
         <h5>Feature:</h5>
-        <strong>{data.feature.name}</strong>
+        <strong><Link to={`/features/${data.feature.index}`}>{data.feature.name}</Link></strong>
         <p>{data.feature.desc.join(' ')}</p>
       </div>
 
